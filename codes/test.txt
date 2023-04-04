@@ -1,0 +1,66 @@
+from tqdm.notebook import tqdm
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from webdriver_manager.chrome import ChromeDriverManager 
+from selenium.webdriver.chrome.service import Service
+import time
+# 팝업창 '확인' 클릭
+from selenium.webdriver.common.alert import Alert
+
+
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+# time.sleep 대신 사용. 페이지 로드되면 접속.
+# element_xpath = '//*[@id="your_element_id"]'  
+# # Replace with the XPath of the element you're waiting for
+# element = WebDriverWait(driver, 10).until(
+#         EC.presence_of_element_located((By.XPATH, element_xpath))
+#     )
+# print(element.text)
+
+
+
+driver = webdriver.Chrome('C:\\Users\\acorn\\Downloads\\cromedriver')
+url = 'https://www.kobis.or.kr/kobis/business/stat/boxs/findPeriodScreenTicketList.do'
+driver.get(url)
+time.sleep(2)
+
+# 임시
+#need = 1
+
+try:
+    
+    #for i in range(need):
+    # 날짜 선택 1
+    element = driver.find_element(By.ID, 'startDate')
+    element.clear()
+    element.send_keys('2023-03-01') # 시작 년도 월 일. %Y-%m-%d  윤년, 월별 최대 끝 필요.
+    element.send_keys(Keys.ENTER)
+    
+
+
+    # 날짜 선택 2
+    element = driver.find_element(By.ID, 'endDate')
+    element.clear()
+    element.send_keys('2023-03-31')
+    element.send_keys(Keys.ENTER)
+
+
+    # 조회 누르기
+    element = driver.find_element(By.CLASS_NAME, 'btn_blue').click()
+    time.sleep(2)
+
+    # 엑셀 저장
+    driver.find_element(By.CLASS_NAME, 'btn_small').click()
+    # 팝업창 '확인' 클릭
+    da = Alert(driver)
+    da.accept()
+
+except Exception as e:
+    print(e)
+    
+finally:
+    driver.close()
+    driver.quit()
