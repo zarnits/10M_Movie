@@ -1,0 +1,63 @@
+from tqdm.notebook import tqdm
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.alert import Alert
+
+# FULLXPATH
+url = 'https://www.kobis.or.kr/kobis/business/stat/boxs/findFormerBoxOfficeList.do'
+driver=webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+driver.get(url)
+
+def wait_for_element(element_xpath, timeout=15):
+    try:
+        element = WebDriverWait(driver, timeout).until(
+            EC.presence_of_element_located((By.XPATH, element_xpath))
+        )
+        return element
+    except Exception as e:
+        print(f"Error: {e}")
+        return None
+    
+try:
+    # 영화이름 로딩 기다리고 
+#     element_xpath = '//*[@id="td_movie"]/span/a'
+#     movie_element = wait_for_element(element_xpath) 
+    
+    
+    # 임시
+    
+    movie_element = driver.find_element(By.ID, 'tr_0') # ok
+    #movie_element = element.find_element(By.ID, 'tr_movie')
+    print('fuck')
+    #movie_element.find_element(By.CLASS_NAME, 'ellip').click()
+    print('you')
+    
+    
+    
+    
+    if movie_element:
+        print('U') # --------여기까지 작동.
+        movie_element.find_element(By.CLASS_NAME, 'ellip').click()
+        #movie_element.click() # 영화이름 하이퍼링크 누르기
+        info_xpath = '/html/body/div[2]/div[1]/div[2]/ul/li[2]/a'
+        
+        info_element = wait_for_element(info_xpath) # 통계정보 기다리기
+        if info_element:
+            print('too')
+            info_element.click() # 통계정보 누르기 ------------여기까지 작동.fullXPATH로 변경.
+            exel_xpath = '/html/body/div[2]/div[2]/div/div[2]/div[3]/div/div/div/div/a'
+                        
+            exel_element = wait_for_element(exel_xpath) #엑셀 기다리기
+            if exel_element:
+                exel_element.click() #엑셀 누르기
+                # Handle the '확인' alert
+                da = Alert(driver)
+                da.accept()
+
+except Exception as e:
+    print(f"Error: {e}")
