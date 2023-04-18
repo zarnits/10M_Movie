@@ -3,6 +3,7 @@
 
 좋은 의견 있으시면 언제든 토론했으면 좋겠습니다.  
 
+(수정중)
 
 Columns:
   Title	Release	Genre	Age	Nation	Type	Director	Main_actor	Audi
