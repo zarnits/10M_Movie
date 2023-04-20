@@ -1,0 +1,190 @@
+<<<<<<< HEAD
+﻿2023. 03. 31 (금) 주제 회의
+
+
+주제 : 1000만 영화가 될 수 있는 요건
+
+
+[분석할 내용]
+
+
+1.  무엇이 천만을 만들었는가?
+
+
+* GDP와 관련해서 소비 패턴 -> 문화 생활에 얼마나 사용하는지 [a]
+* 평점이 초반에 좋았던 영화들이 끝까지 유지 했는지?
+* 평점이 초반에는 좋지 않았지만 입소문을 타서 성공했는지?
+* 연휴/ 주중 / 주말 관람객 수   
+* 상영관 점유율 + 특수관에서의 최종 점유 (10회 미만 데이터 제거)[b][c][d][e]
+* 만든 국가가 어딘지.
+* 영화 체인별 (롯데 시네마, cgv, 메가박스) [f]
+* 기타: 시골 복지관에서 상영하는 영화
+* 영화 상영횟수 10회 미만 데이터는 제거
+* 천만 영화들의 공통적인 키워드 -> 워드 클라우드 까지 안가도 그 리스트로 상위 10개 정도만 추리면 될 것 같아요. 
+* 등급 분류(나이)[g]
+* 같이 개봉한 영화들의 흥행률 앞 뒤 10일[h][i] 
+* 초반 리뷰 크롤링. 또는 초반 관람객의 패턴 공통점이 있으면 좋겠다.
+* 영화 가격 [j][k][l]
+* 날씨 + ( 지역축제 열렸는지 보면 좋을 것 같아요 ) 
+   * 이게 각 영화관 지점별로 확인이 가능하면 쓸 수 있는데,,,
+* 특수관, 상영타입. 
+* 다른 영화와 비교했을 때, 시대적 배경에 영향을 받아 천만을 넘은 것이 있는가?
+        (ex. 명량?)
+* 3,6,10월에 관람객 수가 적어진다는데 이유 분석하고, 그럼에도 저 시기에 개봉한 영화중에 천만을 넘긴 영화가 있는지 확인해 보는거 어떨까요?
+   * 이유까지는 힘들어도 패턴이 있는지 확인하고, 그걸 천만에 쓸 수 있으니까 그렇게 해봐요. 
+* 주조연, 감독[m]. 
+* 코비스->테마통계->총 관객수 일별로 
+
+
+2. ott 가입자 수의 증가와 영화의 관람객 수 변화[n][o][p][q]ott 등장 시점 부터 영화관이 ott에 맞서기 위해 특별관을 만든 것이 관객수 증가에 영향을 주었는가? -> 주었다면 이걸 무기로 삼아서 천만 영화로 갈 수 있을까? 
+* https://stat.kisdi.re.kr/kor/tblInfo/TblInfoList.html?vw_cd=MT_ATITLE
+
+
+
+
+3.  Covid-19와 영화 [r]
+* 코로나 이전과 이후의 특수관        
+
+
+트렌드 
+월별 흥행 영화의 키워드 
+좌석 점유율
+[a]https://www.index.go.kr/unity/potal/indicator/IndexInfo.do?cdNo=2&clasCd=10&idxCd=F0133
+: 1인당 국민 총소득(GNI)
+- https://www.index.go.kr/unity/potal/indicator/IndexInfo.do?cdNo=2&clasCd=8&idxCd=8089
+: 문화여가지출률
+- https://www.index.go.kr/unity/potal/indicator/IndexInfo.do?cdNo=2&clasCd=2&idxCd=4250
+: 여가시간
+- https://www.index.go.kr/unify/idx-info.do?idxCd=4251
+: 문화예술관람률
+[b]https://www.kobis.or.kr/kobis/business/stat/boxs/findFormerBoxOfficeList.do
+: 역대 영화 데이터인데 영화 제목 누르면 스크린수, 상영횟수, 좌석수 등에 대한 점유율 통계정보가 떠서 이거 크롤링으로 다운 받아서 모으면 될 거 같습니다!
+[c]1000만 영화는 뽑기 좋네요 영화들도 다 id tr_0 부터 쭉있고 뽑을데이터도 다 id 따로 있어요
+[d]_완료된 토론으로 표시됨_
+[e]_다시 열림_
+[f]https://www.kobis.or.kr/kobis/business/stat/boxs/findDailyMultichainList.do 
+여기서 기간 설정하고 볼 수 있네요.
+(상영 현황 정보)
+[g]이것도 엑셀
+[h]https://www.kobis.or.kr/kobis/business/stat/offc/findYearlyBoxOfficeList.do
+연도별 박스오피스에서 볼 수 있어요.
+그런데 연도별로 나오다보니 2014년에 개봉한 영화들이 다 나오기 때문에, 천만 영화 개봉 일자 기준 한 달 전 후에 있는 영화들만 선택해야겠네요.
+[i]박스오피스에 월별도 있어서 살릴 수 있어요.
+[j]https://post.naver.com/viewer/postView.naver?volumeNo=31753842&memberNo=31724756
+: 얼마나 올랐나? 2000~2021년까지 영화관람료의 변천사 -> 크롤링..? 아니면 직접 만들어야 할 거 같은.. 데이터표는 못찾겠어요..
+[k]추가로 
+http://www.jbnews.com/news/articleView.html?idxno=1358955 보시면
+영화관을 직접운영하는 직영점과, 점주에게 관리를 맡기는 위탁점이 있는데 이에 따라 가격이 조금씩 차이가 나기도 한다네요. 이 부분 가격 처리 어떻게 할지 의논해봐요
+[l]그러면 직영기준으로 가죠. 어차피 우리에게 필요한건 통용할 수 있는 기준이니까요.
+[m]이거 엑셀파일로 만들어놨어요 정리해둬서 그냥 참고만!
+[n]- https://www.kisdi.re.kr/report/view.do?key=m2101113025790&masterId=4333447&arrMasterId=4333447&artId=657336
+: 세대별 OTT 서비스 이용 현황
+- https://kdx.kr/data/view/34995 : 이건 사야하는 데이터긴 하지만 넣어봅니다..
+[o]https://stat.kisdi.re.kr/kor/tblInfo/TblInfoList.html?vw_cd=MT_ATITLE
+
+
+로 데이터는 이쪽으로 가요.
+[p]_완료된 토론으로 표시됨_
+[q]_다시 열림_
+[r]- https://kosis.kr/statHtml/statHtml.do?orgId=113&tblId=DT_113_STBL_1026895&vw_cd=MT_ZTITLE&list_id=113_11301_001_001&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE
+: 문화예술행사 직접 관람 횟수 데이터 -> 2019년까진 관람횟수가 증가하는 편인데 20년을 기점으로 반이상 줄었음!
+- https://kosis.kr/statHtml/statHtml.do?orgId=113&tblId=DT_113_STBL_1013509&vw_cd=MT_ZTITLE&list_id=113_11301_001_001&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE
+: 문화예술행사 관람률 추이
+- https://kosis.kr/statHtml/statHtml.do?orgId=113&tblId=DT_113_STBL_1027003&vw_cd=MT_ZTITLE&list_id=113_11301_001_005&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE
+: 문화예술 관련 지출을 늘리고 싶은 항목 - 1순위
+=======
+﻿2023. 03. 31 (금) 주제 회의
+
+
+주제 : 1000만 영화가 될 수 있는 요건
+
+
+[분석할 내용]
+
+
+1.  무엇이 천만을 만들었는가?
+
+
+* GDP와 관련해서 소비 패턴 -> 문화 생활에 얼마나 사용하는지 [a]
+* 평점이 초반에 좋았던 영화들이 끝까지 유지 했는지?
+* 평점이 초반에는 좋지 않았지만 입소문을 타서 성공했는지?
+* 연휴/ 주중 / 주말 관람객 수   
+* 상영관 점유율 + 특수관에서의 최종 점유 (10회 미만 데이터 제거)[b][c][d][e]
+* 만든 국가가 어딘지.
+* 영화 체인별 (롯데 시네마, cgv, 메가박스) [f]
+* 기타: 시골 복지관에서 상영하는 영화
+* 영화 상영횟수 10회 미만 데이터는 제거
+* 천만 영화들의 공통적인 키워드 -> 워드 클라우드 까지 안가도 그 리스트로 상위 10개 정도만 추리면 될 것 같아요. 
+* 등급 분류(나이)[g]
+* 같이 개봉한 영화들의 흥행률 앞 뒤 10일[h][i] 
+* 초반 리뷰 크롤링. 또는 초반 관람객의 패턴 공통점이 있으면 좋겠다.
+* 영화 가격 [j][k][l]
+* 날씨 + ( 지역축제 열렸는지 보면 좋을 것 같아요 ) 
+   * 이게 각 영화관 지점별로 확인이 가능하면 쓸 수 있는데,,,
+* 특수관, 상영타입. 
+* 다른 영화와 비교했을 때, 시대적 배경에 영향을 받아 천만을 넘은 것이 있는가?
+        (ex. 명량?)
+* 3,6,10월에 관람객 수가 적어진다는데 이유 분석하고, 그럼에도 저 시기에 개봉한 영화중에 천만을 넘긴 영화가 있는지 확인해 보는거 어떨까요?
+   * 이유까지는 힘들어도 패턴이 있는지 확인하고, 그걸 천만에 쓸 수 있으니까 그렇게 해봐요. 
+* 주조연, 감독[m]. 
+* 코비스->테마통계->총 관객수 일별로 
+
+
+2. ott 가입자 수의 증가와 영화의 관람객 수 변화[n][o][p][q]ott 등장 시점 부터 영화관이 ott에 맞서기 위해 특별관을 만든 것이 관객수 증가에 영향을 주었는가? -> 주었다면 이걸 무기로 삼아서 천만 영화로 갈 수 있을까? 
+* https://stat.kisdi.re.kr/kor/tblInfo/TblInfoList.html?vw_cd=MT_ATITLE
+
+
+
+
+3.  Covid-19와 영화 [r]
+* 코로나 이전과 이후의 특수관        
+
+
+트렌드 
+월별 흥행 영화의 키워드 
+좌석 점유율
+[a]https://www.index.go.kr/unity/potal/indicator/IndexInfo.do?cdNo=2&clasCd=10&idxCd=F0133
+: 1인당 국민 총소득(GNI)
+- https://www.index.go.kr/unity/potal/indicator/IndexInfo.do?cdNo=2&clasCd=8&idxCd=8089
+: 문화여가지출률
+- https://www.index.go.kr/unity/potal/indicator/IndexInfo.do?cdNo=2&clasCd=2&idxCd=4250
+: 여가시간
+- https://www.index.go.kr/unify/idx-info.do?idxCd=4251
+: 문화예술관람률
+[b]https://www.kobis.or.kr/kobis/business/stat/boxs/findFormerBoxOfficeList.do
+: 역대 영화 데이터인데 영화 제목 누르면 스크린수, 상영횟수, 좌석수 등에 대한 점유율 통계정보가 떠서 이거 크롤링으로 다운 받아서 모으면 될 거 같습니다!
+[c]1000만 영화는 뽑기 좋네요 영화들도 다 id tr_0 부터 쭉있고 뽑을데이터도 다 id 따로 있어요
+[d]_완료된 토론으로 표시됨_
+[e]_다시 열림_
+[f]https://www.kobis.or.kr/kobis/business/stat/boxs/findDailyMultichainList.do 
+여기서 기간 설정하고 볼 수 있네요.
+(상영 현황 정보)
+[g]이것도 엑셀
+[h]https://www.kobis.or.kr/kobis/business/stat/offc/findYearlyBoxOfficeList.do
+연도별 박스오피스에서 볼 수 있어요.
+그런데 연도별로 나오다보니 2014년에 개봉한 영화들이 다 나오기 때문에, 천만 영화 개봉 일자 기준 한 달 전 후에 있는 영화들만 선택해야겠네요.
+[i]박스오피스에 월별도 있어서 살릴 수 있어요.
+[j]https://post.naver.com/viewer/postView.naver?volumeNo=31753842&memberNo=31724756
+: 얼마나 올랐나? 2000~2021년까지 영화관람료의 변천사 -> 크롤링..? 아니면 직접 만들어야 할 거 같은.. 데이터표는 못찾겠어요..
+[k]추가로 
+http://www.jbnews.com/news/articleView.html?idxno=1358955 보시면
+영화관을 직접운영하는 직영점과, 점주에게 관리를 맡기는 위탁점이 있는데 이에 따라 가격이 조금씩 차이가 나기도 한다네요. 이 부분 가격 처리 어떻게 할지 의논해봐요
+[l]그러면 직영기준으로 가죠. 어차피 우리에게 필요한건 통용할 수 있는 기준이니까요.
+[m]이거 엑셀파일로 만들어놨어요 정리해둬서 그냥 참고만!
+[n]- https://www.kisdi.re.kr/report/view.do?key=m2101113025790&masterId=4333447&arrMasterId=4333447&artId=657336
+: 세대별 OTT 서비스 이용 현황
+- https://kdx.kr/data/view/34995 : 이건 사야하는 데이터긴 하지만 넣어봅니다..
+[o]https://stat.kisdi.re.kr/kor/tblInfo/TblInfoList.html?vw_cd=MT_ATITLE
+
+
+로 데이터는 이쪽으로 가요.
+[p]_완료된 토론으로 표시됨_
+[q]_다시 열림_
+[r]- https://kosis.kr/statHtml/statHtml.do?orgId=113&tblId=DT_113_STBL_1026895&vw_cd=MT_ZTITLE&list_id=113_11301_001_001&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE
+: 문화예술행사 직접 관람 횟수 데이터 -> 2019년까진 관람횟수가 증가하는 편인데 20년을 기점으로 반이상 줄었음!
+- https://kosis.kr/statHtml/statHtml.do?orgId=113&tblId=DT_113_STBL_1013509&vw_cd=MT_ZTITLE&list_id=113_11301_001_001&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE
+: 문화예술행사 관람률 추이
+- https://kosis.kr/statHtml/statHtml.do?orgId=113&tblId=DT_113_STBL_1027003&vw_cd=MT_ZTITLE&list_id=113_11301_001_005&seqNo=&lang_mode=ko&language=kor&obj_var_id=&itm_id=&conn_path=MT_ZTITLE
+: 문화예술 관련 지출을 늘리고 싶은 항목 - 1순위
+>>>>>>> c9bcd5bb8fae1139fcd6242e45f46b9d83203d75
+-> 영화표가 오르고 코로나 이후인 20, 21년도에도 여전히 영화 관람에 지출을 늘리고 싶다는 의견이 많은 걸로 봐서 추후 나올 영화들이 천만 영화 분석해서 도출된 요건들을 충족한다면 천만영화가 탄생할 수 있을 것! 이런 주장?을 한다면 쓸만해 보여서 넣어봅니다
