@@ -24,10 +24,13 @@ def wait_for_element(element_xpath, timeout=100):
         print(f"Error: {e}")
         return None
 
+# 가져올 범위 설정 max=200
+# 2003,4 년 이전의 영화는 없을수 있으니 확인이 필요하다.
+rank_range=56
 
 try:
 
-    for i in range(41):
+    for i in range(rank_range):
         driver.get(url) # 역대 박스오피스 순위 페이지 접근.
         movie_element = driver.find_element(By.ID, 'tr_{}'.format(i))  # 영화순위 1줄 id접근가능 tr_0 ~tr_200. tr : table_row?
 
