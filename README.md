@@ -41,7 +41,7 @@
 > [macro_envirment](https://github.com/zarnits/10M_Movie/tree/master/movie_DB/macro_envirment) : 영화계의 거시환경적 요소들을 모아놓은 폴더.   
 > [other_data](https://github.com/zarnits/10M_Movie/tree/master/movie_DB/other_data) : 그 외 주제에 대한 데이터를 모아두는 곳.    
 > [raw_data](https://github.com/zarnits/10M_Movie/tree/master/movie_DB/raw_data) : 전처리하기 전의 데이터를 따로 보관하는 곳.  
-> [ppt](https://github.com/zarnits/10M_Movie/tree/master/ppt) : ppt 및 자료들을 보관
+> [ppt](https://github.com/zarnits/10M_Movie/tree/master/ppt) : ppt 및 자료들을 보관.<br/>
 > [wx](https://github.com/zarnits/10M_Movie/tree/master/wx) : 윈도우 프레임활용 DB 조회
 
 
