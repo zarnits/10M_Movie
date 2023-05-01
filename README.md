@@ -8,7 +8,8 @@
 2. [자료 사이트](자료-사이트)
 3. [폴더 구성](#폴더-구성)
 4. [비교할 요소](#비교할-요소)
-5. [자료별 구성요소 출처](#자료별-구성요소-출처)
+5. [결론](#결론)
+6. [자료별 구성요소 출처](#자료별-구성요소-출처)
 <br/><br/>
 
 ## 팀원 소개
@@ -41,7 +42,8 @@
 > [macro_envirment](https://github.com/zarnits/10M_Movie/tree/master/movie_DB/macro_envirment) : 영화계의 거시환경적 요소들을 모아놓은 폴더.   
 > [other_data](https://github.com/zarnits/10M_Movie/tree/master/movie_DB/other_data) : 그 외 주제에 대한 데이터를 모아두는 곳.    
 > [raw_data](https://github.com/zarnits/10M_Movie/tree/master/movie_DB/raw_data) : 전처리하기 전의 데이터를 따로 보관하는 곳.  
-> [ppt](https://github.com/zarnits/10M_Movie/tree/master/ppt) : ppt 및 자료들을 보관
+> [ppt](https://github.com/zarnits/10M_Movie/tree/master/ppt) : ppt 및 자료들을 보관.<br/>
+> [wx](https://github.com/zarnits/10M_Movie/tree/master/wx) : 윈도우 프레임활용 DB 조회
 
 
 <br/><br/>
@@ -78,6 +80,9 @@
 - 요일
 
 <br/><br/>
+
+## 결론
+- 작성예정
 
 ## 자료별 구성요소 출처
 <details>
