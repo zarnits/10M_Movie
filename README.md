@@ -36,6 +36,9 @@
 #### kobis 2004.01.01 - 2023.04.06
 #### 공휴일 2004.01.01 - 2023.04.06
 #### 날씨 2003.12.01 - 2022.12.31
+#### GNI 2003 - 2022
+#### 문화지출 2006 - 2022
+<br/>
 
 ## 폴더 구성
 [analysis](https://github.com/zarnits/10M_Movie/tree/master/analysis) : 분석에 쓰인 jupyter notebook과 R 파일들  
